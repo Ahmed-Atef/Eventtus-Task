@@ -15,13 +15,12 @@ File.readlines('/Users/Ahmed/Desktop/ELVES/myblog/Gemfile').each do |line|
 end
 
 
-url = URI.parse('http://localhost:3000/')
+url = URI.parse('http://localhost:4567/getDep')
 http = Net::HTTP.new(url.host, url.port)
 
 req = Net::HTTP::Post.new(url)
-post_body = []
-post_body << gems
-req.body = post_body.join
+
+req.set_form_data('gems' => [gems])
 
 http.request(req)
 
