@@ -11,7 +11,7 @@ class Library
 	validates_presence_of :name
 	validates_presence_of :type
 
-	belongs_to :gem
+	belongs_to :rgem
 
 end
 

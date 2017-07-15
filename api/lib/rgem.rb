@@ -1,6 +1,6 @@
 
 
-class Gem 
+class Rgem
 	include DataMapper::Resource
 
 
