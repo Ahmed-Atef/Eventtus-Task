@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby	
+
+require 'optparse'
+
+# libdepend version
+VERSION = 0.0
+
+
+options = {}
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: libdepend -[options]"
+  opts.separator("")
+  opts.on("-h", "--help","Shows help") {puts opts; exit}
+	opts.on("-v", "--version", "Show version"){puts VERSION; exit}	
+
+end.parse!
+
+case ARGV[0]
+	when "fetch"
+		load 'libdepend.rb'
+		exit
+
+end
+
+puts "Usage: libdepend [--version][--help] are only available options for now"
+puts ""
+puts "The most commonly used libdepend commands are:"
+puts "	fetch		Displays the System libraries required for your Gem file"
+
